@@ -1,21 +1,21 @@
 <div align="center">
-  <h1>Lista de usuarios registrados </h1>
-  <table border="1" *ngIf="hayRegistros(); else sin">
+  <h1>Lista de Usuarios Registrados</h1>
+  <table  border="1"  class="table" *ngIf="hayRegistros(); else sin">
     <tr>
-      <td>ID</td>
-      <td>NOMBRE</td>
-      <td>TELEFONO</td>
-      <td>EMAIL</td>
-      <td>BORRAR</td>
-      <td>SELECCIONAR</td>
+      <td>Id</td>
+      <td>Nombre</td>
+      <td>Telefono</td>
+      <td>Mail</td>
+      <td>Eliminar</td>
+      <td>Seleccionar</td>
     </tr>
     <tr *ngFor="let usuario of usuarios">
       <td> {{usuario.idUsuario }} </td>
       <td> {{usuario.nombre }} </td>
       <td> {{usuario.telefono }} </td>
       <td> {{usuario.email }} </td>
-      <td> <button (click)="bajaUsuario(usuario.idUsuario)"> Borrar </button> </td>
-      <td> <button (click)="seleccionarUsuario(usuario.idUsuario)"> Seleccionar </button> </td>
+      <td> <button (click)="bajaUsuario(usuario.idUsuario)" class="btn btn-danger" > Borrar </button> </td>
+      <td> <button (click)="seleccionarUsuario(usuario.idUsuario)" class="btn btn-primary"> Seleccionar </button> </td>
     </tr>
   </table>
 
@@ -28,8 +28,8 @@
     <p> Telefono: <input type="number" [(ngModel)]="usuario.telefono" /> </p>
     <p> Email: <input type="text" [(ngModel)]="usuario.email" /> </p>
     <p> 
-      <button (click)="altaUsuario()"> AGREGAR </button> 
-      <button (click)="editarUsuario()"> MODIFICAR </button> 
+      <button type="button" class="btn btn-success" (click)="altaUsuario()"> Agregar </button> 
+      <button  class="btn btn-secondary" type="button" (click)="editarUsuario()"> Editar </button> 
     </p>
   </div>
 
